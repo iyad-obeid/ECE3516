@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>R02</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<div class="cell markdown">
+<h2 id="week-2">Week 2</h2>
+<p>This week there are two tasks you need to address.</p>
+<ul>
+<li>Task 1: <a href="#audio">Audio Decompression</a></li>
+<li>Task 2: <a href="#rcfilter">Basic RC Filter</a></li>
+</ul>
+<p><a id="audio"></a></p>
+<h3 id="audio-decompression">Audio Decompression</h3>
+<p>I have invented a mediocre audio compression algorithm that works as follows:</p>
+<ul>
+<li>Take the first 10ms of audio</li>
+<li>Determine which 20 frequencies have the highest power</li>
+<li>Store the value of those 20 frequencies (in Hertz) along with the corresponding complex <span class="math inline"><em>A</em></span> value for each frequency.</li>
+<li>Repeat for every 10ms of the audio clip</li>
+</ul>
+<p>Your task is undo this process in order to <em>decompress</em> the audio.</p>
+<p>You are given a file named <a href="./files/compressed_audio_1.npz"><code>compressed_audio_1.npz</code></a> which you can load using the NumPy command <code>data = np.load(&#39;compressed_audio_1.npz&#39;)</code>. The result will be a dictionary that contains four elements:</p>
+<ul>
+<li><code>samplerate</code>: the number of samples per second (16000)</li>
+<li><code>nSamplesPerWin</code>: the number of samples per 10ms window (160)</li>
+<li><code>freqs</code>: an array of size 1370 x 20 that stores the 20 peak frequencies in each of the 1370 time windows</li>
+<li><code>A</code>: an array of size 1370 x 20 that stores the coorespond complex A values for each of the time windows</li>
+</ul>
+<p>Write a Python program that loops over all 1370 windows. For each window, generate a sum of the 20 cosines described in <code>A</code> and <code>freqs</code>. The result should be a 1d array with 219200 samples.</p>
+<p>Confirm your reconstruction works by playing back the audio signal. To do so, first normalize the signal so it is on the range (-1,1):</p>
+<p><code>signal = signal / np.max(np.abs(signal))</code></p>
+<p>and then play back. I used the <code>sounddevice</code> library (which I had to install into my environment - go to the Anaconda Launcher and work out how to install a new library). I did playback with:</p>
+<p><code>import sounddevice as sd</code><br />
+<code>sd.play(signal)</code></p>
+<p>Question: Are both amplitude and phase important for audio playback? Explain and/or demonstrate.</p>
+<p><a id="rcfilter"></a></p>
+<h2 id="basic-rc-filter">Basic RC Filter</h2>
+<p>For this in-class assignment, you need to build an RC lowpass circuit with a cutoff frequency close to 3kHz. You need to come up with two different ways to prove to me that your circuit meets this criteria with hardware AND show me how you chose the values of your resistors and capacitors.</p>
+<p>Note: you can use as many resistors and capacitors as you want, but the equivalent circuit should be just one Req and one Ceq.</p>
+</div>
+</body>
+</html>
