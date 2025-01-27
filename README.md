@@ -4,4 +4,4 @@ Recitations, labs, and projects
 
 - [Week 1](R01.html)
 - [Week 2](R02.html)
-
+- [Week 3](R03.html)
