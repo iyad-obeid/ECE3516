@@ -33,14 +33,14 @@
 <p>I have also tried an <strong>overlap</strong> modification that works as follows. The compression methods work the same except that each 50ms window overlaps the previous one by 45ms. So if Window 1 covers <span class="math inline">0 &lt; <em>t</em> &lt; 50</span>ms, then Window 2 covers <span class="math inline">5 &lt; <em>t</em> &lt; 55</span>ms and so on. That way each moment in time is partially represented by multiple A values.</p>
 <p>Your task is undo this process in order to <em>decompress</em> the audio. The files to decompress are:</p>
 <ul>
-<li>audio_1_method_1_no_overlap.npz</li>
-<li>audio_1_method_2_no_overlap.npz</li>
-<li>audio_2_method_1_no_overlap.npz</li>
-<li>audio_2_method_2_no_overlap.npz</li>
-<li>audio_1_method_1_w_overlap.npz</li>
-<li>audio_1_method_2_w_overlap.npz</li>
-<li>audio_2_method_1_w_overlap.npz</li>
-<li>audio_2_method_2_w_overlap.npz</li>
+<li><a href="./files/audio_1_method_1_no_overlap.npz">audio_1_method_1_no_overlap.npz</a></li>
+<li><a href="./files/audio_1_method_2_no_overlap.npz">audio_1_method_2_no_overlap.npz</a></li>
+<li><a href="./files/audio_2_method_1_no_overlap.npz">audio_2_method_1_no_overlap.npz</a></li>
+<li><a href="./files/audio_2_method_2_no_overlap.npz">audio_2_method_2_no_overlap.npz</a></li>
+<li><a href="./files/audio_1_method_1_w_overlap.npz">audio_1_method_1_w_overlap.npz</a></li>
+<li><a href="./files/audio_1_method_2_w_overlap.npz">audio_1_method_2_w_overlap.npz</a></li>
+<li><a href="./files/audio_1_method_1_w_overlap.npz">audio_2_method_1_w_overlap.npz</a></li>
+<li><a href="./files/audio_2_method_2_w_overlap.npz">audio_2_method_2_w_overlap.npz</a></li>
 </ul>
 <p>Confirm your reconstruction works by playing back the audio signals. To do so, first normalize the signal so it is on the range (-1,1):</p>
 <p><code>signal = signal / np.max(np.abs(signal))</code></p>
