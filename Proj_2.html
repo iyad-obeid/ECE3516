@@ -7523,7 +7523,7 @@ either the <code>butter</code> or <code>cheby1</code> functions in <code>SciPy</
 <p><strong>Step 3:</strong> Select values for $R$, $Rf$, and $C$ for the filter below in order to embody the filter that you planned out in Step 2.</p>
 <p><img alt="No description has been provided for this image" src="./imgs/fig008.png" style="display: block; margin: auto;" width="400"/></p>
 <p>This is a <em>Sallen Key</em> filter architecture. Its transfer function is $$\frac{k\omega_c^2}{s^2 + d\omega_cs + \omega_c^2}$$ where:</p>
-<p>$$\omega_c = 1/2\pi RC$$
+<p>$$\omega_c = 1 / RC$$
 $$k = 3-d$$
 $$k = 1+Rf/R$$</p>
 <p><strong>Step 4:</strong> Build your circuit in Multisim and use the Piecewise Linear (PWL) voltage source to simulate filtering your EKG signal.</p>
