@@ -12,6 +12,7 @@
 - [Week 8](R08.html)
 - [Week 9](R09.html)
 - [Week 10](R10.html)
+- [Week 11](R11.html)
 
 ## Projects
 
